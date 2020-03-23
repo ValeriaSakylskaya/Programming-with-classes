@@ -2,9 +2,9 @@ package com.task;
 
 public class Customer {
     private int Id;
-    private String lastName;
     private String firstName;
     private String secondName;
+    private String lastName;
     private String address;
     private int numberOfCreditCard;
     private String numberOfBankAccount;
@@ -74,9 +74,9 @@ public class Customer {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
+
     @Override
-    public String toString ()
-    {
+    public String toString() {
         return "Customer: " + this.lastName + " " + this.firstName + " " + this.secondName + " address: "
                 + this.address + " number of credit card " + this.numberOfCreditCard +
                 " number of bank account " + this.numberOfBankAccount;

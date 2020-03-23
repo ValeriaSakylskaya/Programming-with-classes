@@ -2,6 +2,7 @@ package com.task;
 
 
 import com.task.Enum.DaysOfWeek;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +15,7 @@ public class Airline {
     private DaysOfWeek daysOfWeekAir;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("H.m");
 
-    public Airline(String destination, String flightNumber, String typeOfAircraft , String time , DaysOfWeek daysOfWeekAir) throws ParseException {
+    public Airline(String destination, String flightNumber, String typeOfAircraft, String time, DaysOfWeek daysOfWeekAir) throws ParseException {
         this.destination = destination;
         this.flightNumber = flightNumber;
         this.typeOfAircraft = typeOfAircraft;
@@ -63,8 +64,8 @@ public class Airline {
     }
 
     @Override
-    public  String toString () {
-        return " " + destination + " " + flightNumber + " " + typeOfAircraft + " " + simpleDateFormat.format(departureTime)  + " " + daysOfWeekAir;
+    public String toString() {
+        return " " + destination + " " + flightNumber + " " + typeOfAircraft + " " + simpleDateFormat.format(departureTime) + " " + daysOfWeekAir;
     }
 
 

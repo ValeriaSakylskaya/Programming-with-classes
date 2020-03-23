@@ -1,22 +1,22 @@
 package com.task;
 
 public class Book {
-    private  int id;
+    private int id;
     private String name;
     private String author;
-    private  String publisher;
-    private  int yearPublishing;
-    private int numberPages;
+    private String publisher;
+    private int yearPublishing;
+    private int numberOfPages;
     private double price;
     private String bindingType;
-    Book(int Id, String name, String Author, String Publisher, int yearPublishing, int numberPages, double Price, String bindingType )
-    {
+
+    Book(int Id, String name, String Author, String Publisher, int yearPublishing, int numberOfPages, double Price, String bindingType) {
         this.id = Id;
         this.name = name;
         this.author = Author;
         this.publisher = Publisher;
         this.yearPublishing = yearPublishing;
-        this.numberPages = numberPages;
+        this.numberOfPages = numberOfPages;
         this.price = Price;
         this.bindingType = bindingType;
     }
@@ -37,8 +37,8 @@ public class Book {
         return yearPublishing;
     }
 
-    public int getNumberPages() {
-        return numberPages;
+    public int getNumberOfPages() {
+        return numberOfPages;
     }
 
     public double getPrice() {
@@ -65,8 +65,8 @@ public class Book {
         this.bindingType = bindingType;
     }
 
-    public void setNumberPages(int numberPages) {
-        this.numberPages = numberPages;
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
     }
 
     public void setPrice(double price) {
@@ -82,7 +82,7 @@ public class Book {
     }
 
     @Override
-    public  String toString() {
-        return ("book: " + name + "  author: " + author + " Publisher " + publisher +" year of publishing " + yearPublishing + " price " + price + " binding type " + bindingType);
+    public String toString() {
+        return ("book: " + name + "  author: " + author + " Publisher " + publisher + " year of publishing " + yearPublishing + " price " + price + " binding type " + bindingType);
     }
 }

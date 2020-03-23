@@ -3,11 +3,11 @@ package com.task;
 public class Sentence {
     private String sentence = "";
 
-    Sentence(){
+   public Sentence() {
         this.sentence = "";
     }
-    public void addWord(Word word)
-    {
+
+    public void addWord(Word word) {
         this.sentence += (" " + word.getWord());
     }
 

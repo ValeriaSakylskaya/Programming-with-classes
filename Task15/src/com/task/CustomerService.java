@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class OfferToCustomer {
+public class CustomerService {
     private ArrayList<TravelVoucher> travelVouchers = new ArrayList<>();
     private ArrayList<String> suitableOffers = new ArrayList<>();
     private TravelVoucher voucher;
@@ -16,7 +16,7 @@ public class OfferToCustomer {
     private TravelVoucher voucher2;
     private TravelVoucher voucher3;
 
-    OfferToCustomer() {
+    CustomerService() {
         voucher = new TravelVoucher("Prague", TypeOfVoucher.Excursion, TypeOfTransport.Bus, TypeOfFood.Breakfast, 5);
         voucher1 = new TravelVoucher("Paris", TypeOfVoucher.Shopping, TypeOfTransport.Airplane, TypeOfFood.Buffet, 10);
         voucher2 = new TravelVoucher("Cyprus", TypeOfVoucher.Recreation, TypeOfTransport.Airplane, TypeOfFood.Breakfast, 14);
@@ -30,21 +30,21 @@ public class OfferToCustomer {
 
     public void selectionByType(TypeOfVoucher typeOfVoucher) {
         for (TravelVoucher t : travelVouchers) {
-            if (t.getTypeOfVoucher().equals(typeOfVoucher))
+            if (t.getType().equals(typeOfVoucher))
                 suitableOffers.add(t.toString());
         }
     }
 
     public void selectionByTypeTransport(TypeOfVoucher typeOfVoucher, TypeOfTransport typeOfTransport) {
         for (TravelVoucher t : travelVouchers) {
-            if (t.getTypeOfVoucher().equals(typeOfVoucher) && t.getTypeOfTransport().equals(typeOfTransport))
+            if (t.getType().equals(typeOfVoucher) && t.getTypeOfTransport().equals(typeOfTransport))
                 suitableOffers.add(t.toString());
         }
     }
 
     public void selectionByTypeTransportFood(TypeOfVoucher typeOfVoucher, TypeOfTransport typeOfTransport, TypeOfFood typeOfFood) {
         for (TravelVoucher t : travelVouchers) {
-            if (t.getTypeOfVoucher().equals(typeOfVoucher) && t.getTypeOfTransport().equals(typeOfTransport) &&
+            if (t.getType().equals(typeOfVoucher) && t.getTypeOfTransport().equals(typeOfTransport) &&
                     t.getTypeOfFood().equals(typeOfFood))
                 suitableOffers.add(t.toString());
         }
@@ -52,14 +52,14 @@ public class OfferToCustomer {
 
     public void selectionByAll(TypeOfVoucher typeOfVoucher, TypeOfTransport typeOfTransport, TypeOfFood typeOfFood, int count) {
         for (TravelVoucher t : travelVouchers) {
-            if (t.getTypeOfVoucher().equals(typeOfVoucher) && t.getTypeOfTransport().equals(typeOfTransport) &&
+            if (t.getType().equals(typeOfVoucher) && t.getTypeOfTransport().equals(typeOfTransport) &&
                     t.getTypeOfFood().equals(typeOfFood) && t.getCountDays() <= count)
                 suitableOffers.add(t.toString());
         }
     }
 
     public void sortByType() {
-        Collections.sort(travelVouchers, ((o1, o2) -> o1.getTypeOfVoucher().compareTo(o2.getTypeOfVoucher())));
+        Collections.sort(travelVouchers, ((o1, o2) -> o1.getType().compareTo(o2.getType())));
     }
 
     public void sortByTransport() {
@@ -70,18 +70,18 @@ public class OfferToCustomer {
         Collections.sort(travelVouchers, ((o1, o2) -> o1.getTypeOfFood().compareTo(o2.getTypeOfFood())));
     }
 
-    public void sortOfNameVoucher() {
+    public void sortVoucherName() {
         Collections.sort(travelVouchers, new Comparator<TravelVoucher>() {
             @Override
-            public int compare(TravelVoucher z1, TravelVoucher z2) {
-                String s1 = z1.getNameVoucher();
-                String s2 = z2.getNameVoucher();
-                return s1.compareToIgnoreCase(s2);
+            public int compare(TravelVoucher firstVoucher, TravelVoucher secondVoucher) {
+                String firstVoucherName = firstVoucher.getVoucherName();
+                String secondVoucherName = secondVoucher.getVoucherName();
+                return firstVoucherName.compareToIgnoreCase(secondVoucherName);
             }
         });
     }
 
-    public void sortOfCountDays() {
+    public void sortByDaysCount() {
         Collections.sort(travelVouchers, new Comparator<TravelVoucher>() {
             @Override
             public int compare(TravelVoucher o1, TravelVoucher o2) {
@@ -94,13 +94,13 @@ public class OfferToCustomer {
         });
     }
 
-    public void Output() {
+    public void showTravelVouchers() {
         for (TravelVoucher t : travelVouchers) {
             System.out.println(t.toString());
         }
     }
 
-    public void outputOffer() {
+    public void showOffers() {
         for (String t : suitableOffers) {
             System.out.println(t);
         }

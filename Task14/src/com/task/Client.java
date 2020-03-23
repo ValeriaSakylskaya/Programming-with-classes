@@ -21,19 +21,19 @@ public class Client {
     }
 
     public void searchAccount(String nameAccount) {
-        for (Account ac : this.accounts) {
-            if (ac.getNumberAccount() == nameAccount)
-                System.out.println(ac.toString());
+        for (Account account : this.accounts) {
+            if (account.getAccountNumber() == nameAccount)
+                System.out.println(account.toString());
         }
     }
 
     public void SortAccount() {
         Collections.sort(accounts, new Comparator<Account>() {
             @Override
-            public int compare(Account z1, Account z2) {
-                String s1 = z1.getNumberAccount();
-                String s2 = z2.getNumberAccount();
-                return s1.compareToIgnoreCase(s2);
+            public int compare(Account firstAccount, Account secondAccount) {
+                String firstAccountNumber = firstAccount.getAccountNumber();
+                String secondAccountNumber = secondAccount.getAccountNumber();
+                return firstAccountNumber.compareToIgnoreCase(secondAccountNumber);
             }
         });
     }
@@ -46,20 +46,20 @@ public class Client {
         return sum;
     }
 
-    public double sumPositiveBalance() {
+    public double getSumOfPositiveBalance() {
         double sum = 0;
-        for (Account ac : this.accounts) {
-            if (ac.getBalance() > 0)
-                sum = sum + ac.getBalance();
+        for (Account account : this.accounts) {
+            if (account.getBalance() > 0)
+                sum = sum + account.getBalance();
         }
         return sum;
     }
 
-    public double sumNegativeBalance() {
+    public double getSumOfNegativeBalance() {
         double sum = 0;
-        for (Account ac : this.accounts) {
-            if (ac.getBalance() < 0)
-                sum = sum + ac.getBalance();
+        for (Account account : this.accounts) {
+            if (account.getBalance() < 0)
+                sum = sum + account.getBalance();
         }
         return sum;
     }

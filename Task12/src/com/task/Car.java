@@ -1,7 +1,7 @@
 package com.task;
 
 import Enums.EngineCondition;
-import Enums.typeOfWheel;
+import Enums.TypeOfWheel;
 
 public class Car {
     private Engine engine;
@@ -20,15 +20,15 @@ public class Car {
         return carMake;
     }
 
-    public void Run() {
-        this.engine.setCondition(EngineCondition.Works);
+    public void run() {
+        engine.setCondition(EngineCondition.Works);
     }
 
-    public void Stop() {
-        this.engine.setCondition(EngineCondition.DoesNotWork);
+    public void stop() {
+        engine.setCondition(EngineCondition.DoesNotWork);
     }
 
-    public void Refuel(double fuel) {
+    public void refuel(double fuel) {
         this.tankFullness += fuel;
     }
 
@@ -36,11 +36,11 @@ public class Car {
         this.carMake = carMake;
     }
 
-    public void ShowCarMake() {
+    public void showCarMake() {
         System.out.println("car make: " + this.carMake);
     }
 
-    public void ChangeWheel(typeOfWheel type) {
+    public void ChangeWheel(TypeOfWheel type) {
         this.wheel = new Wheel(type);
     }
 }

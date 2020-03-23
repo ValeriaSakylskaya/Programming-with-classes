@@ -3,18 +3,15 @@ package com.task;
 public class Word {
     public String word;
 
-    Word()
-    {
+    Word() {
         this.word = "";
     }
 
-    Word(String word)
-    {
+    Word(String word) {
         this.word = word;
     }
 
     public String getWord() {
         return word;
     }
-
 }

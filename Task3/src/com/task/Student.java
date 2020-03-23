@@ -5,8 +5,10 @@ public class Student {
     private String group;
     private int[] academicPerformance = new int[5];
 
-   public Student() {}
-   public Student(String FullName, String Group, int[] AcademicPerformance) {
+    public Student() {
+    }
+
+    public Student(String FullName, String Group, int[] AcademicPerformance) {
         this.fullName = FullName;
         this.group = Group;
         this.academicPerformance = AcademicPerformance;
@@ -29,30 +31,29 @@ public class Student {
         return new Student().new Builder();
     }
 
-    public  class Builder {
+    public class Builder {
 
         private Builder() {
         }
 
-        public  Builder setAcademicPerformance (int[] academicPerformance) {
+        public Builder setAcademicPerformance(int[] academicPerformance) {
             Student.this.academicPerformance = academicPerformance;
-            return  this;
+            return this;
         }
 
-        public  Builder setFullName (String FullName) {
+        public Builder setFullName(String FullName) {
             Student.this.fullName = FullName;
-            return  this;
+            return this;
         }
 
-        public  Builder setGroup (String group) {
+        public Builder setGroup(String group) {
             Student.this.group = group;
-            return  this;
+            return this;
         }
     }
 
     @Override
-
-    public String toString(){
-       return this.fullName + this.group + this.academicPerformance.toString();
+    public String toString() {
+        return this.fullName + this.group + this.academicPerformance.toString();
     }
 }

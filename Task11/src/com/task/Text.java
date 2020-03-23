@@ -24,7 +24,7 @@ public class Text {
         text = text.concat(sentence.getSentence());
     }
 
-    public void showText()  {
+    public void showText() {
         System.out.println(text);
     }
 

@@ -11,6 +11,7 @@ public class Train {
     private Date time = new Date();
     private SimpleDateFormat sdf = new SimpleDateFormat("H.m");
     private Train[] Trains;
+
     Train() {
     }
 
@@ -27,18 +28,18 @@ public class Train {
     }
 
     @Override
-
-    public  String toString () {
+    public String toString() {
         return " Number of train " + this.NumberOfTrain + " destination " + this.Destination + " departure time " + sdf.format(this.time);
     }
-    public void getInfoByNumber (Train[] trains , String number) {
+
+    public void getInfoByNumber(Train[] trains, String number) {
         for (Train t : trains) {
             if (t.getNumberOfTrain().equals(number))
                 System.out.println(t.toString());
         }
     }
 
-    public void sortByNumberOfTrain (Train[] trains) {
+    public void sortByNumberOfTrain(Train[] trains) {
         Arrays.sort(trains, new Comparator<Train>() {
             @Override
             public int compare(Train o1, Train o2) {
@@ -47,13 +48,13 @@ public class Train {
         });
     }
 
-    public void sortByDestination (Train[] trains) {
+    public void sortByDestination(Train[] trains) {
         Arrays.sort(trains, new Comparator<Train>() {
             @Override
             public int compare(Train o1, Train o2) {
-               if ( o1.getDestination()== o2.getDestination())
-                return o1.getTime().compareTo(o2.getTime());
-                return o1.getDestination().compareToIgnoreCase(o2.getDestination()) ;
+                if (o1.getDestination() == o2.getDestination())
+                    return o1.getTime().compareTo(o2.getTime());
+                return o1.getDestination().compareToIgnoreCase(o2.getDestination());
             }
         });
     }
@@ -62,24 +63,27 @@ public class Train {
         return new Train().new Builder();
     }
 
-    public  class Builder {
-    private Builder() {
+    public class Builder {
+        private Builder() {
+        }
 
+        public Builder setNumberOfTrain(String numberOfTrain) {
+            Train.this.NumberOfTrain = numberOfTrain;
+            return this;
+        }
+
+        public Builder setDestination(String destination) {
+            Train.this.Destination = destination;
+            return this;
+        }
+
+        public Builder setTime(Date time) {
+            Train.this.time = time;
+            return this;
+        }
+
+        public Train build() {
+            return Train.this;
+        }
     }
-    public Builder setNumberOfTrain(String numberOfTrain) {
-        Train.this.NumberOfTrain = numberOfTrain;
-        return this;
-    }
-    public Builder  setDestination(String destination) {
-        Train.this.Destination = destination;
-        return this;
-    }
-    public Builder setTime(Date time) {
-        Train.this.time = time;
-        return this;
-    }
-    public Train build () {
-        return  Train.this;
-    }
-}
 }

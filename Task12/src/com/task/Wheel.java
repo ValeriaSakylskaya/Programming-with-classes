@@ -1,19 +1,19 @@
 package com.task;
 
-import Enums.typeOfWheel;
+import Enums.TypeOfWheel;
 
 public class Wheel {
-    private typeOfWheel typeWheel;
+    private TypeOfWheel typeWheel;
 
     Wheel() {
-        this.typeWheel = typeOfWheel.summer;
+        this.typeWheel = TypeOfWheel.SUMMER;
     }
 
-    Wheel(typeOfWheel type) {
+    Wheel(TypeOfWheel type) {
         this.typeWheel = type;
     }
 
-    public typeOfWheel getTypeWheel() {
+    public TypeOfWheel getTypeWheel() {
         return typeWheel;
     }
 }
